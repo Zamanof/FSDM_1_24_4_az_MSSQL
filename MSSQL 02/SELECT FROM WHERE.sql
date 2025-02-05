@@ -196,8 +196,8 @@ USE Students
 
 -- FETCH NEXT (N) ROWS ONLY - novbeti N setri goster
 -- (OFFSET achar sozu ile birlikde ishleyir)
-SELECT FirstName, LastName, Age 
-FROM Students
-ORDER BY FirstName
-OFFSET(5) ROW
-FETCH NEXT (3) ROWS ONLY
+--SELECT FirstName, LastName, Age 
+--FROM Students
+--ORDER BY FirstName
+--OFFSET(5) ROW
+--FETCH NEXT (3) ROWS ONLY
