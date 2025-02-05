@@ -1,0 +1,27 @@
+-- zaman ile ishleme funksiyalari
+-- https://learn.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql?view=sql-server-ver16
+
+SELECT SYSDATETIME() AS CurrentDate
+SELECT YEAR(SYSDATETIME()) AS CurrentYear
+SELECT MONTH(SYSDATETIME()) AS CurrentMonth
+SELECT DAY(SYSDATETIME()) AS CurrentDay
+
+--SELECT MONTH('19800223')
+--SELECT MONTH('1980.02.23')
+--SELECT MONTH('1980/02/23')
+--SELECT MONTH('1980-02-23')
+
+SELECT DATEDIFF(YEAR, '1980/10/07', SYSDATETIME()) AS MyAge
+
+SELECT DATEDIFF(MONTH, '1980/10/07', SYSDATETIME()) AS MyAgeMonths
+
+SELECT DATEDIFF(DAY, '1980/10/07', SYSDATETIME()) AS MyAgeDays
+
+SELECT DATEDIFF(HOUR, '1980/10/07', SYSDATETIME()) AS MyAgeHours
+
+SELECT DATEDIFF(MINUTE, '1980/10/07', SYSDATETIME()) AS MyAgeMinute
+
+SELECT DATEDIFF(SECOND, '1980/10/07', SYSDATETIME()) AS MyAgeSeconds
+
+
+
