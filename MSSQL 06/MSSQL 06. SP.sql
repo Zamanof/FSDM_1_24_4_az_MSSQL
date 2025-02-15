@@ -1,5 +1,34 @@
--- Stored Procedure (SP)
+﻿-- Stored Procedure (SP)
+/*
+/*
+	Saxlanilan prosedurlar - SP  (Stored procedures - SP)
 
+	Saxlanilan prosedur  - T-SQL komandalarinin adıqoyilmuş blokudur.Blok giriş və çıxış parametrlərinə malik ola bilər
+	
+	Saxlanılan prosedur həmişə səhvin kodu olan rəqəmi qaytarir.Əgər prosedur uğurla yerinə yetirilibsə, onda sıfır qayıdır, əgər uğursuz yerinə yetirilibsə onda səhvin kodu qayıdır.
+	
+	Saxlanılan prosedurlar hansısa əməliyyatlarin yerine yetirilmesi üçün  nəzərdə tutulub : məlumatlarda  dəyişikliklərin edilməsi, BD arxitekturası ilə birgə əməkdaşlıq
+
+	SP ilə nə etmək olar :
+	+ onları EXECUTE KOMANDASİNİN KOMEYİLE T-SQL KODUNDAN ÇAĞIRMAQ  OLAR
+	;onlara məlumatları giriş parametrlərinin vasitəsilə ötürmək və onlardan məlumatları çıxış parametrləri vasitəsilə geri almaq olar
+	+ onlar nəticələndirən sorğular qrupunu kliyent proqramına qaytara bilirlər
+	+ onlar cədvəldəki məlumatlarda dəyişikliklər edə bilirlər
+	+ оnlar cədvəl və indeks yarada,dəyişdirə və ləğv edə bilirlər
+
+	SP-den istifade etmeyin ustunlukleri 
+	+ T-SQL kodunun inkapsulyasiyasi
+	+ melumatlar bazasinin daha da tehlukesiz olmasinin temin edilmesi
+	+ Istifadecilere ve proqramlara melumatlardan istifade ucun daha universal girish seviyyesinin tegdim edilmesi
+	+yerine yetirilme planlarinin yaradilmasi vasitesile mehsuldarligin yukseldilmesi.bu planlar tekraren istifade oluna biler
+
+	:Demek olar ki, BUTUN T-SQL INSTRUKSIYALARI SAXLANILAN PROSEDURA DAXIL EDILE BILER
+	+  USE <database name>;komandasini istifade etmek olmaz
+	+ Create instruksiyasini bu tip komandalarla istifade etmek olmaz: AGGREGATE, RULE, DEFAULT, 
+	  CREATE, FUNCTION, TRIGGER, PROCEDURE ya  VIEW;
+	+ CREATE, ALTER  ve DROP instruksiyalarinin komeyi ile cedvel ve indeksi yaratmaq, deyishmek ve leğv etmek olar
+
+*/
 USE [Library]
 
 GO

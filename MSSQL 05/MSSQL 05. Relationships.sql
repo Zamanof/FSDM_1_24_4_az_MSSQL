@@ -60,3 +60,20 @@
 --CONSTRAINT FK_Authors_Id FOREIGN KEY ([AuthorId]) REFERENCES Authors(Id),
 --CONSTRAINT FK_Books_Id FOREIGN KEY ([BookId]) REFERENCES Books(Id)
 --)
+
+/*
+	Xarici açarlar və cədvəllərin arasında olan əlaqələr (Foreign keys and relationships between tables)
+
+	Məlumat bazalarının daxilində cədvəllər ola bilər, hansılar ki,öz aralarında müxtəlif əlaqələr ilə bağlıdırlar. 
+	Əlaqə (relationship) müxtəlif növlü mahiyyətlər arasında assosiyasiyanı təsfir edir.
+
+	Əlaqəni vurğulayarkən, əsas və yaxud valideyn (primary key table / master 
+	table) və tabeli və yaxud ikincidərəcəli cədvəli vurğulayırlar (foreign key table / child table). İkibcidərəcəli cədvəl velideyn cədvəlindən asılıdır.
+
+	Əlaqənin təşkil olunması üçün xarici açarlardan istifadə olunur. 
+	
+	Xarici açar – bu, bir cədvəldən olan bir və bir neçə yaxud sütundur, bu cədvəl eyni zamanda 
+	Digər cədvəldən potensial ilkin açardır. Xarici açarın əsas cəlvəldən ilkin açara uyğun olması vacib deyil.
+ Hərçənd, bir qayda olaraq, asılı cədvəldən xarici açar əsas cədvəldən ilkin açara işarə edir.
+
+*/

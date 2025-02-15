@@ -1,6 +1,27 @@
 ﻿-- VIEW - təqdimat
 
--- VIEW - adlandırılmış sorğu olan virtual cədvəldir
+/*
+Təqdimatlar (View) – virtual cədvəldir, hansı ki özü ilə adlandırılmış sorğunu təsfir edir. 
+	Yəni ki, təqdimatın tərkibi məlumatlar əsasında dinamik olaraq hesablanır, hansılar ki təqdimata müraciət olunan zaman baş verir həmən anda real cədvəllərə yerləşir.
+
+	Təqdimatlar baza cədvəlləri kimi yalnız real cədvəllərdən istifadə edə bilərlər.
+
+	Təqdimatdan SELECT  sorusunun vasitəsi ilə seçim etmək olar. Həmçinin təqdimatlara modifikasiya sorğularını tətbiq etməkolar.
+
+
+	Təqdimatların vasitəsi ilə baza cədvəlinin məlumatlarını dəyişmək olar, hələ ki sıradakı qaydalara riayyət olunur:
+	+ DML-instruksiyaları (INSERT, UPDATE и DELETE) bir dəfəyə d
+Qiq bir cədvələ əsaslanmalıdırlar, təqdimatın neçə cədvələ əsaslanmasının əhəmiyyəti yoxdur.
+	+ Təqdimatın sütunları cədvəllərin sütunlarına birbaşa əsaslanmalıdırlar və hesablanan məna olmamalıdırlar.
+
+	+ UNION/UNION ALL, CROSS JOIN, EXCEPT или INTERSECT operatorlarının vasitəsi ilə formalaşan təqdimat sütununu modifikasiya etmək olmaz.
+	+ Mənası qruplaşma nəticəsində alınan, məsələn, DISTINCT, GROUP BY и HAVING əlavələrinin istifadəsi nəticəsində alınan təqdimatın sütununu modifikasiya etmək olmaz. 
+
+
+	 SQL-də təqdimatlar məlumat bazasına daxil olan sorğuların saxlanması və təkrar istifadə olunması üçün istifadə olunur.	Beləliklə, mürəkkəb məntiqi inkapsullaşdırmaq olar və onu məlumat bazasında müəyyən ad altında gələcəkdə istifadə üçün saxlamaq olar.
+ Həmçinin təqdimatların vasitəsi ilə məlumatlara giriş hüquqlarını rahat şəkildə təqdim etmək olar.
+
+*/
 
 /*
 	CREATE VIEW view_name
@@ -50,6 +71,16 @@ FROM StudInfo
 --UPDATE StudInfo
 --SET FirstName = N'İsgəndər', GroupName = 'FSD_13'
 --WHERE Id = 17
+
+
+/*
+SCHEMABINDING
+	Əgər SCHEMABINDING arqumenti göstərilmişdirsə, cədvəli və yaxud cədvəlləri belə üsulla dəyişmək olmaz, hansı ki təqdimatın müəyyən edilməsinə təsir göstərə bilər.
+ Öncə cədvəldən olan asılılıqları yığmaq üçün, hansını ki dəyişmək lazımdır, təqdimatın özünü dəyişmək və yaxud silmək lazımdır. 
+SCHEMABINDING arqumentindən istifadə edən zaman select_statement instruksiyası cədvələrin, təqdimatların və yaxud istifadəçi funksiyalarının ikikomponentli adlarını (schema.object) daxil etməlidir, hansılar ki cümlədə yada salınır. 
+İnstruksiyada göstərilən bütün obyektlər bir məlumat bazasında yerləşməlidirlər.
+
+*/
 
 -- SCHEMABINDING
 --ALTER VIEW StudInfo

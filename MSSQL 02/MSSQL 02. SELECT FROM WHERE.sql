@@ -1,4 +1,4 @@
--- SELECT FROM WHERE
+﻿-- SELECT FROM WHERE
 
 /*
 SELECT [DISTINCT | ALL] * | val1, val2,...,valN
@@ -12,6 +12,12 @@ ORDER BY <order_list> [ASC | DESC]
 	Multi line
 	comment
 */
+
+--	SELECT – son nəticədə göstərilməli olan sütunları işarə edir 
+--	FROM – məlumatların geri qayıttığı sxemləri işarə edir 
+--	WHERE – sətirbəstir emal olunması üçün nəzərdə tutulan sətri işarə edir (əgər konkret sətr üçün nəzərdə tutulmuş şərt true-nu geri qaytarsa, o zaman bu sətr nəticələndirən seçimə əlavə olunacaqdır) 
+	
+--	ORDER BY – son nəticə üçün nəzərdə tutulmuş seçim ardıcıllığını işarə edir
 
 
 USE Students
@@ -70,20 +76,20 @@ USE Students
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName = N'�����'
+--WHERE FirstName = N'Ольга'
 
 -- AND, OR, NOT
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName = N'�����' AND Age > 70
+--WHERE FirstName = N'Ольга' AND Age > 70
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName = N'�����' OR Age > 70
+--WHERE FirstName = N'Ольга' OR Age > 70
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE NOT (FirstName = N'�����' OR Age > 70)
+--WHERE NOT (FirstName = N'Ольга' OR Age > 70)
 --ORDER BY FirstName
 
 -- <column_name> IS [NOT] NULL - gosterilen sutunun deyerinin NULL olub olmamsi
@@ -108,12 +114,12 @@ USE Students
 -- IN Example
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName = N'����' OR FirstName = N'�����' 
---								OR FirstName = N'����'
+--WHERE FirstName = N'Петр' OR FirstName = N'Ольга' 
+--								OR FirstName = N'Юрий'
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName IN (N'����', N'�����', N'����')
+--WHERE FirstName IN (N'Петр', N'Ольга', N'Юрий')
 
 
 -- LIKE - setirlerde daha deqiq sechimler etmek uchun
@@ -126,48 +132,48 @@ USE Students
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName = N'�����'
+--WHERE FirstName = N'Ольга'
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName LIKE N'�����'
+--WHERE FirstName LIKE N'Ольга'
 
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName LIKE N'�%'
+--WHERE FirstName LIKE N'О%'
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName NOT LIKE N'�%'
+--WHERE FirstName NOT LIKE N'О%'
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName LIKE N'�%' AND LastName NOT LIKE N'�%'
+--WHERE FirstName LIKE N'О%' AND LastName NOT LIKE N'М%'
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName LIKE N'_�%'
+--WHERE FirstName LIKE N'_а%'
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName LIKE N'[���]%'
+--WHERE FirstName LIKE N'[АОД]%'
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName LIKE N'[^���]%'
+--WHERE FirstName LIKE N'[^АОД]%'
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName LIKE N'[�-�]%'
+--WHERE FirstName LIKE N'[А-Е]%'
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE LastName LIKE N'%���'
+--WHERE LastName LIKE N'%ова'
 
 --SELECT FirstName, LastName, Age 
 --FROM Students
---WHERE FirstName LIKE N'[�-�][�-�]%'
+--WHERE FirstName LIKE N'[А-Е][д-к]%'
 
 
 -- TOP(N) -  ilk N sayda sechimi goster

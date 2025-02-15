@@ -1,4 +1,14 @@
--- GROUP BY
+﻿-- GROUP BY
+
+/*
+	Aqreqat funksiyaların qruplaşması.
+
+	Aqreqat funksiyalardan istifadə edən zaman, başlanğıc sxemi alt-sxemlərə  bölmək və aqriqat funksiyanı alt-sxemə (alt-qrupa) nisbətən tətbiq etmək olar.
+ 
+	Nəticələmə sxeminin alt-qruplara bölünməsi üçün konstruksiya istifadə olunur 
+	GROUP BY sütunların_adları
+*/
+
 
 -- Column 'Books_En.Category' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.
 --SELECT Category, SUM(Pages) AS SumPages
@@ -13,6 +23,11 @@ SELECT Category, Topic, SUM(Pages) AS SumPages
 FROM Books_En
 WHERE Category IS NOT NULL
 GROUP BY Category, Topic
+
+/* GROUP BY-dan istifadə bəzi məhdudiyyətlər yaradır: SELECT-də yalnız o sütunlardan istifadə etmək olar ki, hansılar boyunca qruplaşma, və aqriqasiya edən funksiyalar getsin 
+Aqreqat funksiyaları ilə işləyən zaman baş verən tipik səhvlər göstərilmişdir. Səhv ona görə baş verir ki, aqreqasiya edən funksiyanın bir nəticəsinə Name sütunundan bir neçə nəticə əldə edilir.
+ 
+Belə halda SQL Server Name sütununda nəyi çıxarmanın lazım olduğunu başa düşməyəcək. */
 
 
 -- Aggregate funksiyalari WHERE-de istifade etmek olmaz
